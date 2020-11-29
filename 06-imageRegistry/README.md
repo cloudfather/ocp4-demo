@@ -6,11 +6,11 @@ oc edit configs.imageregistry.operator.openshift.io cluster
 ```
 
 1. In the previous command you need to search for 
-** managementState **
+__managementState__
 
 Then you need to change the status to ** Managed **
 
-2. Search for ** storage ** -> in spec, and change it to whatever sotorageClass you have or make it emptyDir
+2. Search for __storage__ -> in spec, and change it to whatever sotorageClass you have or make it emptyDir
 ```yaml
   storage:
     emptyDir: {}
@@ -21,7 +21,7 @@ Then you need to change the status to ** Managed **
 oc get pods -n openshift-image-registry
 ```
 
-4. Ensure the image registry cluster operator is in ** Available **
+4. Ensure the image registry cluster operator is in __Available__
 ```bash
 oc get co image-registry
 ```
