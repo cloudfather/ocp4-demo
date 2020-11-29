@@ -8,7 +8,7 @@ oc edit configs.imageregistry.operator.openshift.io cluster
 1. In the previous command you need to search for 
 __managementState__
 
-Then you need to change the status to ** Managed **
+Then you need to change the status to __Managed__
 
 2. Search for __storage__ -> in spec, and change it to whatever sotorageClass you have or make it emptyDir
 ```yaml
