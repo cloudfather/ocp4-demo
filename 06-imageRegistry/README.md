@@ -24,4 +24,17 @@ oc get pods -n openshift-image-registry
 4. Ensure the image registry cluster operator is in __Available__
 ```bash
 oc get co image-registry
+--
+NAME             VERSION   AVAILABLE   PROGRESSING   DEGRADED   SINCE
+image-registry   4.4.29    True        False         False      6d17h
+```
+
+5. To move the image registry to the __infra__ nodes
+```bash
+oc edit configs.imageregistry.operator.openshift.io cluster
+```
+Add nodeSelector to spec
+```yaml
+  nodeSelector:
+    node-role.kubernetes.io/infra: ""
 ```
